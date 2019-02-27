@@ -7,22 +7,25 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
   return graphql(`
-    {
-      allMarkdownRemark(limit: 1000) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              tags
-              templateKey
-            }
+  {
+    allMarkdownRemark(
+      sort: { order: ASC, fields: [frontmatter___date] }
+      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            tags
+            templateKey
           }
         }
       }
     }
+  }
   `).then(result => {
     if (result.errors) {
       result.errors.forEach(e => console.error(e.toString()))
