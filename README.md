@@ -1,3 +1,9 @@
+# Artist on the World Wide Web
+
+This is a repository to host the website for AWWW.
+
+---
+
 # Gatsby + Netlify CMS Starter
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b654c94e-08a6-4b79-b443-7837581b1d8d/deploy-status)](https://app.netlify.com/sites/gatsby-starter-netlify-cms-ci/deploys)
@@ -72,9 +78,3 @@ npm install --global --production windows-build-tools
 
 ## Purgecss
 This plugin uses [gatsby-plugin-purgecss](https://www.gatsbyjs.org/packages/gatsby-plugin-purgecss/) and [bulma](https://bulma.io/). The bulma builds are usually ~170K but reduced 90% by purgecss.
-
----
-
-# Artist on the World Wide Web
-
-This is a repository to host the website for AWWW.
