@@ -18,7 +18,6 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Category", name: "category", widget: "hidden", default: "Blog"}
 
   - name: "work"
     label: "Work"
