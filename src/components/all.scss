@@ -1,0 +1,160 @@
+// FONTS
+@font-face {
+	font-family: "Chicago";
+	src: url("../assets/fonts/Chicago.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: "Chicago";
+	src: url("../assets/fonts/Chicago\ Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+	font-family: "Chicago";
+	src: url("../assets/fonts/Chicago\ Light.ttf") format("truetype");
+    font-weight: light;
+    font-style: normal;
+}
+@font-face {
+	font-family: "Chicago";
+	src: url("../assets/fonts/Chicago\ Medium.ttf") format("truetype");
+    font-weight: medium;
+    font-style: normal;
+}
+
+// COLORS
+$white: white;
+$dark-blue: #2C2E40;
+$grey-01: #939393;
+
+$side-padding: 100px;
+
+html {
+    background-color: $dark-blue;
+    color: $white;
+}
+body {
+    font-family: 'Chicago', monotype;
+}
+h1, h2, h3, h4 {
+    font-weight: bold;
+}
+h1 {
+    text-transform: uppercase;
+}
+p {
+    font-weight: normal;
+}
+a {
+    text-decoration: none;
+    color: $white;
+}
+// LANDING PAGE
+.landing-container {
+    min-height: 100vh;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+// NAVBAR LOGO
+.navbar-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.navbar-menu {
+    display: flex;
+    justify-content: center;
+
+    .navbar-item {
+        margin: 0px 20px;
+        padding: 10px 30px;
+        border: 1px solid red;
+        
+        text-transform: uppercase;
+    }
+}
+
+// ABOUT
+.about-container {
+    display: grid;
+    grid-template-areas:
+        "about-01 about-01-image"
+        "mural mural"
+        "members-photo members-description";
+    // margin-top: 40px;
+    // padding: 0px 4vw;
+
+    .about-01 {
+        grid-area: about-01;
+        width: 550px;
+        padding: $side-padding;
+    }
+    .about-01-image {
+        grid-area: about-01-image;
+        align-self: center;
+
+        background-image: url('../img/about-awww.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 400px;
+        span {
+            display: none;
+        }
+    }
+    .about-mural {
+        grid-area: mural;
+
+        background-image: url('../img/patterns/pattern_puzzle.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 150px;
+        width: 100vw;
+
+        span {
+            display: none;
+        }
+    }
+    .about-members-photo {
+        grid-area: members-photo;
+        width: 550px;
+
+        padding: 0px 0px 0px $side-padding;
+
+        .about-members-photo-container {
+            display: flex;
+            flex-wrap: wrap;
+
+            .members-photo {
+                background: white;
+                width: 125px;
+                height: 125px;
+                margin: 6px;
+            }
+        }
+
+        
+    }
+    .about-members-description {
+        grid-area: members-description;
+
+        padding: 0px $side-padding 0px 0px;
+    }
+
+}
+
+
+
+// FOOTER
+footer {
+    padding: 75px;
+}
+.footer-copyright {
+    text-align: center;
+}
