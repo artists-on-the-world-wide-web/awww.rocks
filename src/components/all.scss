@@ -137,19 +137,39 @@ a {
                 height: 125px;
                 margin: 6px;
             }
-        }
-
-        
+        } 
     }
     .about-members-description {
         grid-area: members-description;
 
         padding: 0px $side-padding 0px 0px;
     }
-
 }
 
+// BLOG
+.blog-container {
+    display: flex;
+    justify-content: center;
 
+    padding: 0px $side-padding;
+}
+.article-container {
+    width: 300px;
+    margin: 25px;
+
+    .article-thumbnail {
+        background: white;
+        width: 300px;
+        height: 150px;
+        margin: 6px;
+    }
+}
+
+// PORTFOLIO
+.work-container {
+    // background-image: url();
+    border: solid red 2px;
+}
 
 // FOOTER
 footer {

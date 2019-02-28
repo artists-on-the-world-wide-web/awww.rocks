@@ -7,30 +7,39 @@ class BlogRoll extends React.Component {
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
-    
     return (
-      <div className="columns is-multiline">
+      <div className="blog-container">
+      <br />
       {posts && (posts
           .map(({ node: post }) => (
             <div
-              className="is-parent column is-6"
+              className=""
               key={post.id}
             >
-            <article className="tile is-child box notification">
+            <article className="article-container">
+            <div className="article-thumbnail"></div>
+            <br />
+            <Link className="" to={post.fields.slug}></Link>
+              {/* TITLE */}
+              <span><span style={{ fontSize:"2rem" }}>{post.frontmatter.title}</span></span>
+              <br />
+              <br />
+              <span> &bull; </span><span className="">{post.frontmatter.date}</span>
+              {/* LISTING OUT TAGS */}
+              <div>
+                {post.frontmatter.tags && post.frontmatter.tags.length ? (
+                  <div style={{ marginTop: `10px` }}>
+                    <span className="taglist">
+                      {post.frontmatter.tags.map(tag => (
+                        <span key={tag + `tag`}>#{tag}</span>
+                      ))}
+                    </span>
+                  </div>
+                ) : null}
+              </div>
+              <br />
               <p>
-                <Link className="title has-text-primary is-size-4" to={post.fields.slug}>
-                  {post.frontmatter.title}
-                </Link>
-                <span> &bull; </span>
-                <span className="subtitle is-size-5 is-block">{post.frontmatter.date}</span>
-              </p>
-              <p>
-                {post.excerpt}
-                <br />
-                <br />
-                <Link className="button" to={post.fields.slug}>
-                  Keep Reading →
-                </Link>
+                {post.frontmatter.description}
               </p>
               </article>
             </div>
@@ -67,6 +76,8 @@ export default () => (
               title
               templateKey
               date(formatString: "MMMM DD, YYYY")
+              description
+              tags
             }
           }
         }
