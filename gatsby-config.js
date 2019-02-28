@@ -1,8 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'AWWW - Artists omn the World Wide Web',
-    description:
-      'We are Artists 🎨, Designers ✍🏼, Coders 💻',
+    description: 'We are Artists 🎨, Designers ✍🏼, Coders 💻',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
