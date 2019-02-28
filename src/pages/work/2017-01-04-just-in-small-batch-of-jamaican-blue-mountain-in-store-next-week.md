@@ -1,12 +1,11 @@
 ---
-templateKey: 'blog-post'
-title: 'Sample Work 01'
+templateKey: blog-post
+title: Work 01
 date: 2017-01-04T15:04:10.000Z
-description: >-
-  Sample Work Description
-category: Work
+description: Sample Work Description
 tags:
   - Code
+category: Work
 ---
 
 We expect the shipment of a limited quantity of green beans next Monday. We’ll be offering the roasted beans from Tuesday, but quantities are limited, so be quick.
