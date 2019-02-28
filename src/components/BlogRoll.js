@@ -15,6 +15,7 @@ class BlogRoll extends React.Component {
             <div
               className=""
               key={post.id}
+              
             >
             <article className="article-container">
             <div className="article-thumbnail"></div>
