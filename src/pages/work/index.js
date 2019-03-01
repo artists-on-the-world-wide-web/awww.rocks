@@ -8,7 +8,7 @@ export default class WorkIndexPage extends React.Component {
     
   return (
       <Layout>
-        <section className="section">
+        <section className="container">
             <WorkRoll />
         </section>
       </Layout>

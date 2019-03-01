@@ -17,8 +17,9 @@ class BlogRoll extends React.Component {
               className=""
               key={post.id}
             >
+            <Link className="" to={post.fields.slug}>
             <article className="work-container">
-            <Link className="" to={post.fields.slug}></Link>
+            
               {/* TITLE */}
               <span><span style={{ fontSize:"2rem" }}>{post.frontmatter.title}</span></span>
               <br />
@@ -41,6 +42,7 @@ class BlogRoll extends React.Component {
                 {post.frontmatter.description}
               </p>
               </article>
+              </Link>
             </div>
           )))}
           </div>
