@@ -1,7 +1,35 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 
+import '../../components/about.scss';
+import members from './members.json';
+
 export class About extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            memberName: "Chris",
+            memberDetail: "Marshmallow candy liquorice. Bear claw cotton candy bonbon apple pie fruitcake chocolate bar. Soufflé apple pie cotton candy chupa chups brownie cheesecake cupcake candy. Pie sesame snaps chocolate."
+        };
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(e) {
+        // console.log("member is clicked!");
+        // console.log(this.state);
+        // console.log(e.target.id);
+
+        members["members"].forEach(student => {
+            if (student.memberName == e.target.id) {
+                this.setState({
+                    memberName: student.memberName,
+                    memberDetail: student.memberDetail
+                })
+            }
+        });
+
+    }
+
     render() {
         return (
             
@@ -17,10 +45,10 @@ export class About extends React.Component {
                     <div className="about-members-photo">
                         <h1>Member</h1>
                         <div className="about-members-photo-container">
+                            <div className="members-photo" id="Chris" onClick={this.handleClick}><span>Chris</span></div>
+                            <div className="members-photo" id="Cat" onClick={this.handleClick}><span>Cat</span></div>
                             <div className="members-photo"></div>
-                            <div className="members-photo"></div>
-                            <div className="members-photo"></div>
-                            <div className="members-photo"></div>
+                            <div className="members-photo"></div>   
                             <div className="members-photo"></div>
                             <div className="members-photo"></div>
                             <div className="members-photo"></div>
@@ -33,9 +61,8 @@ export class About extends React.Component {
                         
                     </div>
                     <div className="about-members-description" style={{ paddingTop:"60px" }}>
-                        <h1>Name</h1>
-                        <p>
-Marshmallow candy liquorice. Bear claw cotton candy bonbon apple pie fruitcake chocolate bar. Soufflé apple pie cotton candy chupa chups brownie cheesecake cupcake candy. Pie sesame snaps chocolate.</p>
+                        <h1>{this.state.memberName}</h1>
+                        <p>{this.state.memberDetail}</p>
                     </div>
                 </section>
             </Layout>

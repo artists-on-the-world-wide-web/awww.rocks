@@ -29,6 +29,10 @@ $white: white;
 $dark-blue: #2C2E40;
 $grey-01: #939393;
 
+$pink: #EE6EAF;
+$yellow: #E8AF00;
+$green: #00FF27;
+
 $side-padding: 100px;
 
 html {
@@ -37,6 +41,7 @@ html {
 }
 body {
     font-family: 'Chicago', monotype;
+    margin: 0px;
 }
 h1, h2, h3, h4 {
     font-weight: bold;
@@ -75,7 +80,7 @@ a {
     .navbar-item {
         margin: 0px 20px;
         padding: 10px 30px;
-        border: 1px solid red;
+        // border: 1px solid red;
         
         text-transform: uppercase;
     }
@@ -116,6 +121,8 @@ a {
         background-repeat: no-repeat;
         height: 150px;
         width: 100vw;
+        // margin-left: 0px;
+        // border: red 1px solid;
 
         span {
             display: none;
@@ -130,13 +137,6 @@ a {
         .about-members-photo-container {
             display: flex;
             flex-wrap: wrap;
-
-            .members-photo {
-                background: white;
-                width: 125px;
-                height: 125px;
-                margin: 6px;
-            }
         } 
     }
     .about-members-description {

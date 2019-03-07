@@ -39,13 +39,13 @@ const Navbar = class extends React.Component {
             <span style={{ fontSize:"10px" }}>Artists on the World Wide Web</span>
           </Link>
           <div id="navMenu" className="navbar-menu">
-            <Link className="navbar-item" to="/blog">
+            <Link className="navbar-item" to="/blog" activeStyle={{ backgroundColor:"#00FF27", color:"#2C2E3F" }}>
               Blog
             </Link>
-            <Link className="navbar-item" to="/work">
+            <Link className="navbar-item" to="/work" activeStyle={{ backgroundColor:"#E8AF00", color:"#2C2E3F" }}>
               Portfolio
             </Link>
-            <Link className="navbar-item" to="/about">
+            <Link className="navbar-item" to="/about" activeStyle={{ backgroundColor:"#EE6EAF", color:"#2C2E3F" }}>
               About
             </Link>
             {/* <Link className="navbar-item" to="/contact">
