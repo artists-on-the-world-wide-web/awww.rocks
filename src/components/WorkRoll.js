@@ -1,12 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, graphql, StaticQuery } from 'gatsby';
+import PreviewCompatibleImage from './PreviewCompatibleImage';
 
 class BlogRoll extends React.Component {
 
   render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+    const { data } = this.props;
+    const { edges: posts } = data.allMarkdownRemark;
+
     
     return (
       <div className="portfolio-container">
@@ -25,6 +27,20 @@ class BlogRoll extends React.Component {
               <br />
               <br />
               <span> &bull; </span><span className="">{post.frontmatter.date}</span>
+
+               {post.frontmatter.cover ? (
+                    <div className="featured-thumbnail">
+                      <PreviewCompatibleImage
+                        imageInfo={{
+                          image: post.frontmatter.cover,
+                          alt: `featured image thumbnail for post ${
+                            post.title
+                          }`,
+                        }}
+                      />
+                    </div>
+                  ) : null}
+
               {/* LISTING OUT TAGS */}
               <div>
                 {post.frontmatter.tags && post.frontmatter.tags.length ? (
@@ -79,6 +95,13 @@ export default () => (
               date(formatString: "MMMM DD, YYYY")
               description
               tags
+              cover {
+                childImageSharp {
+                  fluid(maxWidth: 120, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
           }
         }
