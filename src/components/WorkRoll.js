@@ -95,6 +95,7 @@ export default () => (
               date(formatString: "MMMM DD, YYYY")
               description
               tags
+              featuredpost
               cover {
                 childImageSharp {
                   fluid(maxWidth: 120, quality: 100) {
