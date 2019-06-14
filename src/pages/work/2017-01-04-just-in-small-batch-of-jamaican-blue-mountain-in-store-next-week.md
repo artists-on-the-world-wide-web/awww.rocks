@@ -4,9 +4,12 @@ title: AWWW Merchandise
 date: 2017-01-04T15:04:10.000Z
 cover: /img/image_from_ios-2x.png
 featuredpost: true
-description: Branding + Advertising
+description: >-
+  Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet,
+  consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum
+  faucibus dolor auctor.
 tags:
-  - Code
+  - Branding + Advertising
 category: Work
 ---
 Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
