@@ -3,6 +3,7 @@ templateKey: blog-post
 title: AWWW Merchandise
 date: 2017-01-04T15:04:10.000Z
 cover: /img/image_from_ios-2x.png
+featuredpost: true
 description: Branding + Advertising
 tags:
   - Code
