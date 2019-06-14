@@ -1,0 +1,33 @@
+// COLORS
+$white: white;
+$black: black;
+$dark-blue: #2C2E40;
+$grey-01: #939393;
+
+$pink: #EE6EAF;
+$yellow: #E8AF00;
+$green: #00FF27;
+
+$side-padding: 100px;
+
+html {
+    background-color: $dark-blue;
+    color: $white;
+}
+body {
+    font-family: 'Chicago', monotype;
+    margin: 0px;
+}
+h1, h2, h3, h4 {
+    font-weight: bold;
+}
+h1 {
+    text-transform: uppercase;
+}
+p {
+    font-weight: normal;
+}
+a {
+    text-decoration: none;
+    color: $white;
+}

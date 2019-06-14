@@ -1,0 +1,88 @@
+// ABOUT
+.about-container {
+    display: grid;
+    grid-template-areas:
+        "about-01 about-01-image"
+        "mural mural"
+        "members-photo members-description";
+    // margin-top: 40px;
+    // padding: 0px 4vw;
+
+    .about-01 {
+        grid-area: about-01;
+        width: 550px;
+        padding: $side-padding;
+    }
+    .about-01-image {
+        grid-area: about-01-image;
+        align-self: center;
+
+        background-image: url('../img/about-awww.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 400px;
+        span {
+            display: none;
+        }
+    }
+    .about-mural {
+        grid-area: mural;
+
+        background-image: url('../img/patterns/pattern_puzzle.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 150px;
+        width: 100vw;
+        // margin-left: 0px;
+        // border: red 1px solid;
+
+        span {
+            display: none;
+        }
+    }
+    .about-members-photo {
+        grid-area: members-photo;
+        width: 550px;
+
+        padding: 0px 0px 0px $side-padding;
+
+        .about-members-photo-container {
+            display: flex;
+            flex-wrap: wrap;
+        } 
+    }
+    .about-members-description {
+        grid-area: members-description;
+
+        padding: 0px $side-padding 0px 0px;
+    }
+}
+
+.about-container {
+    .about-members-photo {
+        .about-members-photo-container {
+
+            // ADD / REMOVE NEW MEMEBERS HERE
+            #Chris {
+                background-image: url('../img/members/chris.jpg');
+                background-size: cover;
+            }
+            #Cat {
+                background-image: url('../img/members/cat.png');
+                background-size: cover;
+            }
+
+            .members-photo {
+                background: white;
+                width: 125px;
+                height: 125px;
+                margin: 6px;
+                cursor: pointer;
+
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}
