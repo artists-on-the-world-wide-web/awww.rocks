@@ -58,31 +58,31 @@
     }
 }
 
-.about-container {
-    .about-members-photo {
-        .about-members-photo-container {
+// .about-container {
+//     .about-members-photo {
+//         .about-members-photo-container {
 
-            // ADD / REMOVE NEW MEMEBERS HERE
-            #Chris {
-                background-image: url('../img/members/chris.jpg');
-                background-size: cover;
-            }
-            #Cat {
-                background-image: url('../img/members/cat.png');
-                background-size: cover;
-            }
+//             // ADD / REMOVE NEW MEMEBERS HERE
+//             #Chris {
+//                 background-image: url('../img/members/chris.jpg');
+//                 background-size: cover;
+//             }
+//             #Cat {
+//                 background-image: url('../img/members/cat.png');
+//                 background-size: cover;
+//             }
 
-            .members-photo {
-                background: white;
-                width: 125px;
-                height: 125px;
-                margin: 6px;
-                cursor: pointer;
+//             .members-photo {
+//                 background: white;
+//                 width: 125px;
+//                 height: 125px;
+//                 margin: 6px;
+//                 cursor: pointer;
 
-                span {
-                    display: none;
-                }
-            }
-        }
-    }
-}
+//                 span {
+//                     display: none;
+//                 }
+//             }
+//         }
+//     }
+// }

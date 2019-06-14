@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 
-import '../../components/about.scss';
 import members from './members.json';
 
 export class About extends React.Component {
