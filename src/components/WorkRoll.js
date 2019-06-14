@@ -9,55 +9,103 @@ class BlogRoll extends React.Component {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
 
-    
     return (
       <div className="portfolio-container">
       <br />
       {posts && (posts
           .map(({ node: post }) => (
-            <div
-              className=""
-              key={post.id}
-            >
-            <Link className="" to={post.fields.slug}>
-            <article className="work-container">
             
-              {/* TITLE */}
-              <span><span style={{ fontSize:"2rem" }}>{post.frontmatter.title}</span></span>
-              <br />
-              <br />
-              <span> &bull; </span><span className="">{post.frontmatter.date}</span>
+            // Check if the post is a Featured Post
+            post.frontmatter.featuredpost ?
 
-               {post.frontmatter.cover ? (
-                    <div className="featured-thumbnail">
+              // Featured Post
+              <div key={post.id}>
+
+                <Link  to={post.fields.slug}>
+                  <article className="work-container-featured">
+
+                    {/* Adding an Cover Image */}
+                    {post.frontmatter.cover ? (
                       <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.cover,
-                          alt: `featured image thumbnail for post ${
-                            post.title
-                          }`,
-                        }}
-                      />
-                    </div>
+                      imageInfo={{
+                        image: post.frontmatter.cover,
+                        alt: `featured image thumbnail for post ${
+                          post.title
+                        }`,
+                      }}
+                    />
+                    ) : null}
+
+                    <span className="portfolio-description">
+                      {/* TITLE */}
+                      <span className="portfolio-title" style={{ fontSize:"2rem" }}>{post.frontmatter.title}</span>
+                      <span className="">{post.frontmatter.date}</span>
+                      
+                      {/* LISTING OUT TAGS */}
+                      <div>
+                        {post.frontmatter.tags && post.frontmatter.tags.length ? (
+                          <div style={{ marginTop: `10px` }}>
+                            <span className="taglist">
+                              {post.frontmatter.tags.map(tag => (
+                                <span key={tag + `tag`}>#{tag}</span>
+                              ))}
+                            </span>
+                          </div>
+                        ) : null}
+                      </div>
+                      <br />
+                      <p className="description">
+                        {post.frontmatter.description}
+                      </p>
+                    </span>
+
+                  </article>
+                </Link>
+              </div>
+
+            : 
+
+            // Non Featured Post
+            <div key={post.id}>
+              <Link to={post.fields.slug}>
+                <article className="work-container-non-featured">
+
+                  {/* Adding an Cover Image */}
+                  {post.frontmatter.cover ? (
+                    <PreviewCompatibleImage
+                    imageInfo={{
+                      image: post.frontmatter.cover,
+                      alt: `featured image thumbnail for post ${
+                        post.title
+                      }`,
+                    }}
+                  />
                   ) : null}
 
-              {/* LISTING OUT TAGS */}
-              <div>
-                {post.frontmatter.tags && post.frontmatter.tags.length ? (
-                  <div style={{ marginTop: `10px` }}>
-                    <span className="taglist">
-                      {post.frontmatter.tags.map(tag => (
-                        <span key={tag + `tag`}>#{tag}</span>
-                      ))}
-                    </span>
-                  </div>
-                ) : null}
-              </div>
-              <br />
-              <p>
-                {post.frontmatter.description}
-              </p>
-              </article>
+                  <span className="portfolio-description">
+                    {/* TITLE */}
+                    <span className="portfolio-title" style={{ fontSize:"2rem" }}>{post.frontmatter.title}</span>
+                    <span className="">{post.frontmatter.date}</span>
+                    
+                    {/* LISTING OUT TAGS */}
+                    <div>
+                      {post.frontmatter.tags && post.frontmatter.tags.length ? (
+                        <div style={{ marginTop: `10px` }}>
+                          <span className="taglist">
+                            {post.frontmatter.tags.map(tag => (
+                              <span key={tag + `tag`}>#{tag}</span>
+                            ))}
+                          </span>
+                        </div>
+                      ) : null}
+                    </div>
+                    <br />
+                    <p className="description">
+                      {post.frontmatter.description}
+                    </p>
+                  </span>
+
+                </article>
               </Link>
             </div>
           )))}
@@ -77,29 +125,30 @@ BlogRoll.propTypes = {
 export default () => (
   <StaticQuery
     query={graphql`
-    query WorkRollQuery {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] },
-        filter: { frontmatter: { templateKey: { eq: "blog-post" }, category: { eq: "Work" }}}
-      ) {
-        edges {
-          node {
-            excerpt(pruneLength: 400)
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              templateKey
-              date(formatString: "MMMM DD, YYYY")
-              description
-              tags
-              featuredpost
-              cover {
-                childImageSharp {
-                  fluid(maxWidth: 120, quality: 100) {
-                    ...GatsbyImageSharpFluid
+      query WorkRollQuery {
+        allMarkdownRemark(
+          sort: { order: DESC, fields: [frontmatter___date] },
+          filter: { frontmatter: { templateKey: { eq: "blog-post" }, category: { eq: "Work" }}}
+        ) {
+          edges {
+            node {
+              excerpt(pruneLength: 400)
+              id
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                templateKey
+                date(formatString: "MMMM DD, YYYY")
+                description
+                tags
+                featuredpost
+                cover {
+                  childImageSharp {
+                    fluid(maxWidth: 120, quality: 100) {
+                      ...GatsbyImageSharpFluid
+                    }
                   }
                 }
               }
@@ -107,7 +156,6 @@ export default () => (
           }
         }
       }
-    }
     `}
     render={(data, count) => (
       <BlogRoll data={data} count={count} />

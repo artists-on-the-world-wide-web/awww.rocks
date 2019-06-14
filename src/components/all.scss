@@ -26,6 +26,7 @@
 
 // COLORS
 $white: white;
+$black: black;
 $dark-blue: #2C2E40;
 $grey-01: #939393;
 
@@ -172,12 +173,6 @@ a {
     }
 }
 
-// PORTFOLIO
-.work-container {
-    // background-image: url();
-    border: solid red 2px;
-}
-
 // FOOTER
 footer {
     padding: 75px;
@@ -185,3 +180,5 @@ footer {
 .footer-copyright {
     text-align: center;
 }
+
+@import "./scss/portfolio-roll.scss";
