@@ -1,5 +1,6 @@
 ---
-templateKey: about-page
+templateKey: 'about-page'
+path: /about
 title: AWWW_ABOUT US
 intro:
   description: >-
@@ -19,4 +20,3 @@ intro:
   heading: AWWW_ABOUT US
   image: /img/about-awww.jpg
 ---
-

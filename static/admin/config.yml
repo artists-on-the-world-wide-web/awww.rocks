@@ -50,6 +50,6 @@ collections:
               {label: Heading, name: heading, widget: text},
               {label: Description, name: description, widget: text},
               {label: Image, name: image, widget: image}
-          ]}
+              ]}
           # - {label: "Body(Remove)", name: "body", widget: "markdown"}
 

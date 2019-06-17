@@ -19,7 +19,7 @@ export class About extends React.Component {
         // console.log(e.target.id);
 
         members["members"].forEach(student => {
-            if (student.memberName == e.target.id) {
+            if (student.memberName === e.target.id) {
                 this.setState({
                     memberName: student.memberName,
                     memberDetail: student.memberDetail
