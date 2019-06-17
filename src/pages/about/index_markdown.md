@@ -1,19 +1,7 @@
 ---
-templateKey: 'about-page'
-path: /about
-title: About our values
+templateKey: about-page
+title: AWWW_ABOUT US
 ---
-### Shade-grown coffee
-Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.
+Jelly beans tootsie roll cake tootsie roll macaroon. Jelly danish cake jujubes. Tart chocolate cake dragée topping marzipan sweet dessert candy. Apple pie cotton candy tart. Tart oat cake chocolate jelly fruitcake. Oat cake sweet roll lollipop carrot cake jelly-o chupa chups fruitcake. Macaroon jelly icing pie. Sesame snaps liquorice gingerbread chocolate bar tart jelly gummies cake biscuit. Lemon drops liquorice tiramisu candy canes dessert tootsie roll. Cake liquorice muffin lollipop. Jelly beans cake topping dessert cupcake tootsie roll apple pie. Caramels cake lollipop. Jelly beans lollipop chocolate cake oat cake tootsie roll dragée.
 
-### Single origin
-Single-origin coffee is coffee grown within a single known geographic origin. Sometimes, this is a single farm or a specific collection of beans from a single country. The name of the coffee is then usually the place it was grown to whatever degree available.
-
-### Sustainable farming
-Sustainable agriculture is farming in sustainable ways based on an understanding of ecosystem services, the study of relationships between organisms and their environment. What grows where and how it is grown are a matter of choice and careful consideration for nature and communities.
-
-### Direct sourcing
-Direct trade is a form of sourcing practiced by some coffee roasters. Advocates of direct trade practices promote direct communication and price negotiation between buyer and farmer, along with systems that encourage and incentivize quality.
-
-### Reinvest profits
-We want to truly empower the communities that bring amazing coffee to you. That’s why we reinvest 20% of our profits into farms, local businesses and schools everywhere our coffee is grown. You can see the communities grow and learn more about coffee farming on our blog.
+Halvah cookie caramels pudding ice cream chocolate cake. Lemon drops chocolate cake chocolate bar pastry fruitcake ice cream. Fruitcake sugar plum dragée jelly-o chupa chups lemon drops jujubes gummi bears. Macaroon pudding wafer bonbon bonbon donut. Apple pie cupcake dessert tootsie roll fruitcake liquorice cheesecake pastry. Cake donut pastry. Apple pie sweet roll topping chocolate cake chocolate. Soufflé sugar plum jujubes cupcake dessert jelly-o. Jujubes brownie bear claw. Sweet roll powder cotton candy muffin lollipop marzipan macaroon tart cake. Croissant ice cream wafer jelly-o liquorice. Danish lemon drops pastry caramels.
