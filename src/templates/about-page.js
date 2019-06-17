@@ -65,7 +65,7 @@ export const AboutPageTemplate = ({ title, content, intro, contentComponent }) =
           </div>
         </div>
       </div> */}
-      
+
     </section>
   )
 }
@@ -106,7 +106,6 @@ export const aboutPageQuery = graphql`
       frontmatter {
         title
         intro {
-            heading
             description
             image {
                 childImageSharp {
