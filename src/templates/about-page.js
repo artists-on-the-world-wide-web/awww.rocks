@@ -51,21 +51,6 @@ export const AboutPageTemplate = ({ title, content, intro, contentComponent }) =
             <p>Memeber Detail</p>
             {/* <p>{this.state.memberDetail}</p> */}
         </div>
-
-      {/* <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-                <p>{intro.description}</p>
-              </h2>
-              <PageContent className="content" content={content} />
-            </div>
-          </div>
-        </div>
-      </div> */}
-
     </section>
   )
 }
