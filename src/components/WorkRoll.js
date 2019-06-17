@@ -146,7 +146,7 @@ export default () => (
                 featuredpost
                 cover {
                   childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
+                    fluid(maxWidth: 1900, quality: 100) {
                       ...GatsbyImageSharpFluid
                     }
                   }

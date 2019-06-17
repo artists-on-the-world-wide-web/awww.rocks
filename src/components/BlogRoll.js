@@ -1,6 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, graphql, StaticQuery } from 'gatsby';
+import PreviewCompatibleImage from './PreviewCompatibleImage';
+
 
 class BlogRoll extends React.Component {
 
@@ -20,7 +22,21 @@ class BlogRoll extends React.Component {
             <Link className="" to={post.fields.slug}>
             <article className="article-container">
             
-            <div className="article-thumbnail"></div>
+            {post.frontmatter.thumbnail ? (
+              <div className="article-thumbnail">
+                <PreviewCompatibleImage
+                imageInfo={{
+                  image: post.frontmatter.thumbnail,
+                  alt: `featured image thumbnail for blog ${
+                    post.title
+                  }`,
+                }}
+                />
+              </div>
+            ) 
+            : 
+            (<div className="article-thumbnail"></div>)}
+            
             <br />
             
               {/* TITLE */}
@@ -82,6 +98,7 @@ export default () => (
               date(formatString: "MMMM DD, YYYY")
               description
               tags
+              thumbnail
             }
           }
         }
