@@ -1,6 +1,8 @@
 ---
 templateKey: blog-post
 title: Title A
+thumbnail: >-
+  https://raw.githubusercontent.com/artists-on-the-world-wide-web/awww.rocks/master/static/img/chemex.jpg
 date: 2017-01-04T15:04:10.000Z
 description: >-
   Brewing with a Chemex probably seems like a complicated, time-consuming
