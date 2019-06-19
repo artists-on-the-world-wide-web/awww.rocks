@@ -9,6 +9,7 @@ $yellow: #E8AF00;
 $green: #00FF27;
 
 $side-padding: 100px;
+$content-side-padding: 200px;
 
 html {
     background-color: $dark-blue;
@@ -30,4 +31,19 @@ p {
 a {
     text-decoration: none;
     color: $white;
+}
+
+// BLOG & WORK
+.content-container {
+    padding: 0px $side-padding;
+    background-color: white;
+    border-radius: 10px;
+    min-height: 70vh;
+    color: $black;
+    margin: 50px $side-padding;
+    padding: $side-padding;
+}
+.container {
+    padding: 0px $side-padding;
+    margin-top: 50px;
 }

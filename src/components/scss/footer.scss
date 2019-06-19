@@ -1,7 +1,18 @@
 // FOOTER
 footer {
-    padding: 75px;
-}
-.footer-copyright {
-    text-align: center;
+    // padding: 75px;
+    // min-height: 300px;
+    margin: 50px 0px;
+
+    .footer-mural {
+        background-image: url('../img/patterns/pattern_puzzle_02.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100px;
+    }
+
+    .footer-copyright {
+        margin-top: 50px;
+        text-align: center;
+    }
 }

@@ -35,8 +35,8 @@ const Navbar = class extends React.Component {
       >
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" title="Logo" style={{ margin:"20px" }}>
-            <img src={logo} alt="awww-logo" style={{ width: '88px', marginBottom:"10px" }} />
-            <span style={{ fontSize:"10px" }}>Artists on the World Wide Web</span>
+            <img src={logo} alt="awww-logo" style={{ width: '250px', marginBottom:"10px" }} />
+            <span style={{ fontSize:"1.5rem" }}>Artists on the World Wide Web</span>
           </Link>
           <div id="navMenu" className="navbar-menu">
             <Link className="navbar-item" to="/blog" activeStyle={{ backgroundColor:"#00FF27", color:"#2C2E3F" }}>

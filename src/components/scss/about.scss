@@ -5,12 +5,14 @@
         "about-01 about-01-image"
         "mural mural"
         "members-photo members-description";
-    // margin-top: 40px;
+    
+    grid-template-columns: 1fr 1fr;
+
+    margin-top: 40px;
     // padding: 0px 4vw;
 
     .about-01 {
         grid-area: about-01;
-        width: 550px;
         padding: $side-padding;
     }
     .about-01-image {
@@ -31,7 +33,9 @@
         background-size: cover;
         background-repeat: no-repeat;
         height: 150px;
-        width: 100vw;
+        // width: 100vw;
+
+        margin: 0px;
         // margin-left: 0px;
         // border: red 1px solid;
 
@@ -39,9 +43,11 @@
             display: none;
         }
     }
+
     .about-members-photo {
         grid-area: members-photo;
         width: 550px;
+        min-height: 350px;
 
         padding: 0px 0px 0px $side-padding;
 
@@ -52,6 +58,7 @@
     }
     .about-members-description {
         grid-area: members-description;
+        // width: 100%;
 
         padding: 0px $side-padding 0px 0px;
     }
@@ -73,30 +80,5 @@
             }
         }
         
-
-        // .about-members-photo-container {
-
-        //     // ADD / REMOVE NEW MEMEBERS HERE
-        //     #Chris {
-        //         background-image: url('../img/members/chris.jpg');
-        //         background-size: cover;
-        //     }
-        //     #Cat {
-        //         background-image: url('../img/members/cat.png');
-        //         background-size: cover;
-        //     }
-
-        //     .members-photo {
-        //         background: white;
-        //         width: 125px;
-        //         height: 125px;
-        //         margin: 6px;
-        //         cursor: pointer;
-
-        //         span {
-        //             display: none;
-        //         }
-        //     }
-        // }
     }
 }
