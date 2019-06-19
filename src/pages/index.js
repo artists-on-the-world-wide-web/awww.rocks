@@ -2,16 +2,23 @@ import React from 'react';
 import { Link } from 'gatsby';
 import logo from '../img/logo/logo-y.svg';
 
-import styled from 'styled-components';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+    body {
+        color: ${props => (props.whiteColor ? 'white' : 'black')};
+        margin: ${props => (props.noMargin ? '0px' : '8px')};
+        font-family: ${props => props.theme.fontFamily};
+    }
+`
 
 const LandingPage = styled.div`
-    background-color: $dark-blue;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Chicago', monotype;
+    background-color: #2C2E40;
 `
 
 const Logo = styled.img`
@@ -19,19 +26,23 @@ const Logo = styled.img`
     margin-bottom: 10px;
 `
 
-const H1 = styled.h1`
-    font-weight: bold;
-    font-family: 'Chicago', monotype;
+const Heading = styled.div`
+    font-size: 1.5rem;
+    margin: 15px 0px;
 `
 
 const StyledLink = styled(Link)`
-    color: #939393
+    color: #939393;
+    font-size: .7rem;
 `
 
 export default () => (
-    <LandingPage>
-        <Logo src={logo} alt="awww-logo" />
-        <H1>Artists on the World Wide Web</H1>
-        <StyledLink to="/work" >Click to enter our AWWW_some world</StyledLink>
-    </LandingPage>
+    <ThemeProvider theme={{ fontFamily: 'Chicago, monotype' }}>
+        <LandingPage>
+            <GlobalStyle whiteColor noMargin />
+            <Logo src={logo} alt="awww-logo" />
+            <Heading>Artists on the World Wide Web</Heading>
+            <StyledLink to="/work" >Click to enter our AWWW_some world</StyledLink>
+        </LandingPage>
+    </ThemeProvider>
 );
