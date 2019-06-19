@@ -1,8 +1,34 @@
 # Artist on the World Wide Web
 
-This is a repository to host the website for AWWW.
+A blog and portfolio for [Artist on the World Wide Web](https://awwwrock.netlify.com).
+
+To access website to write new posts, please access the [Admin page](https://awwwrock.netlify.com/admin).
+
+***If you do not know the id and the password, please contact the president or any AWWW team members.***
+
+## Feature Requests
+If anyone have a great idea for the website or found a bug, please create an issue in the repository.
+
+## Developer
+The site is developed by AWWW alum, [Will Kim](https://withoutwax.me/).   
+If you see him around say hi 👋🏼.
 
 ---
+
+<details>
+<summary>For Development</summary>
+
+Welcome!   
+My name is Will and I am a developer who built this site. I am glad that you have agreed to maintain / build this site! If not, still welcome! It is always exciting to discover someone who loves to code!
+
+The entire website is built with two tech stack:
+- Gatsby.js
+- Netlify CMS
+
+As you know, Gatsby.js is a library based in React, thus majority of the site is created as if it is built with React.   
+There are few exceptions where the Landing Page is built with [Styled Components](https://www.styled-components.com/). Also Gatsby uses GraphQL to talk to the Backend (Netlify CMS).
+
+Have a look around! it is pretty neatly built. If you have any question, please create an issue on this repository and we can talk 🙂.
 
 # Gatsby + Netlify CMS Starter
 
@@ -78,3 +104,4 @@ npm install --global --production windows-build-tools
 
 ## Purgecss
 This plugin uses [gatsby-plugin-purgecss](https://www.gatsbyjs.org/packages/gatsby-plugin-purgecss/) and [bulma](https://bulma.io/). The bulma builds are usually ~170K but reduced 90% by purgecss.
+</details>
