@@ -1,58 +1,65 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
-export const AboutPageTemplate = ({ title, content, intro, contentComponent }) => {
-  const PageContent = contentComponent || Content
+export const AboutPageTemplate = ({ title, intro, members }) => {
 
-  return (
-    <section className="section section--gradient about-container">
+    // React Hooks
+    const [index, setIndex] = useState(0);
 
-        <div className="about-01">
-            <h1>{title}</h1>
-            <p>{intro.description}</p>
-        </div>
+    const handleClick = (i) => {
+        setIndex(i)
+    }
 
-        <div 
-            className="about-01-image"
-            style={{
-                backgroundImage: `url(${
-                !!intro.image.childImageSharp ? intro.image.childImageSharp.fluid.src : intro.image
-                })`,
-                backgroundSize: 'contain',
-                backgroundRepeat: 'no-repeat'
-            }}
-        ></div>
+    return (
+        <section className="section section--gradient about-container">
 
-        <div className="about-mural"><span>MURAL GOES HERE!</span></div>
-        <div className="about-members-photo">
-            <h1>Member</h1>
-            <div className="about-members-photo-container">
-                <div className="members-photo" id="Chris"><span>Chris</span></div>
-                <div className="members-photo" id="Cat"><span>Cat</span></div>
-                <div className="members-photo"></div>
-                <div className="members-photo"></div>   
-                <div className="members-photo"></div>
-                <div className="members-photo"></div>
-                <div className="members-photo"></div>
-                <div className="members-photo"></div>
-                <div className="members-photo"></div>
-                <div className="members-photo"></div>
-                <div className="members-photo"></div>
-                <div className="members-photo"></div>
+            <div className="about-01">
+                <h1>{title}</h1>
+                <p>{intro.description}</p>
             </div>
+
+            <div 
+                className="about-01-image"
+                style={{
+                    backgroundImage: `url(${
+                    !!intro.image.childImageSharp ? intro.image.childImageSharp.fluid.src : intro.image
+                    })`,
+                    backgroundSize: 'contain',
+                    backgroundRepeat: 'no-repeat'
+                }}
+            ></div>
+
+            <div className="about-mural"><span>MURAL GOES HERE!</span></div>
             
-        </div>
-        <div className="about-members-description" style={{ paddingTop:"60px" }}>
-            <h1>Member Name</h1>
-            {/* <h1>{this.state.memberName}</h1> */}
-            <p>Memeber Detail</p>
-            {/* <p>{this.state.memberDetail}</p> */}
-        </div>
-    </section>
-  )
+            <div className="about-members-photo">
+                <h1>Member</h1>
+
+                <div className="about-members-photo-container">
+                    {members.map((member, index) => (
+                        <div onClick={() => handleClick(index)} className="members-photo" id={member.name} key={member.profileImage.id}>
+                            <PreviewCompatibleImage
+                                imageInfo={{
+                                image: member.profileImage,
+                                alt: `Profile Image of ${
+                                    member.name
+                                }`,
+                            }}
+                            />
+                        </div>
+                    ))}
+                </div>
+                
+            </div>
+            <div className="about-members-description" style={{ paddingTop:"60px" }}>
+                <h1>{members[index].name}</h1>
+                <p>{members[index].description}</p>
+            </div>
+        </section>
+    )
+    // }
 }
 
 AboutPageTemplate.propTypes = {
@@ -61,6 +68,7 @@ image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   intro: PropTypes.object,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
+  members: PropTypes.array,
 }
 
 const AboutPage = ({ data }) => {
@@ -69,14 +77,14 @@ const AboutPage = ({ data }) => {
   return (
     <Layout>
       <AboutPageTemplate
-        contentComponent={HTMLContent}
         title={post.frontmatter.title}
         intro={post.frontmatter.intro}
-        content={post.html}
+        members={post.frontmatter.members}
       />
     </Layout>
   )
 }
+
 
 AboutPage.propTypes = {
   data: PropTypes.object.isRequired,
@@ -93,6 +101,18 @@ export const aboutPageQuery = graphql`
         intro {
             description
             image {
+                childImageSharp {
+                    fluid(maxWidth: 1200, quality: 64) {
+                      ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+        }
+        members {
+            name
+            description
+            profileImage {
+                id
                 childImageSharp {
                     fluid(maxWidth: 1200, quality: 64) {
                       ...GatsbyImageSharpFluid
